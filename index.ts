@@ -1,15 +1,14 @@
-export {
-  bool,
-  num,
-  str,
-  optional,
-  Enum,
-  EnvVars,
-} from './lib/envvar'
+export { EnvVars } from './lib/envvar'
+
+export { BaseEnvVarResolver as BaseResolver } from './lib/resolver/base'
+export { bool } from './lib/resolver/bool'
+export { enu } from './lib/resolver/enu'
+export { num } from './lib/resolver/num'
+export { str } from './lib/resolver/str'
+export { url } from './lib/resolver/url'
 
 export {
   EnvVarError,
-  EnvVarAggregateError,
   UnsetError,
   ValueTypeError,
 } from './lib/error'

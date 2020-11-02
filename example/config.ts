@@ -2,19 +2,18 @@ import {
   bool,
   num,
   str,
-  optional,
-  Enum,
+  enu,
+  url,
   EnvVars,
 } from '../index'
 
-const nodeEnv = new Enum(['development', 'staging', 'production'])
-
 const envVars = new EnvVars({
-  NODE_ENV: optional(nodeEnv.enum, 'development'),
-  HOST: optional(str, 'localhost'),
-  PORT: num,
-  DEBUG: optional(bool, true),
-  JWT_SECRET: str,
+  NODE_ENV: enu(['development', 'staging', 'production']).default('development'),
+  HOST: str().default('localhost'),
+  PORT: num().required(),
+  DEBUG: bool().default(true),
+  JWT_SECRET: str().required(),
+  AUTH_API: url().default(new URL('http://gateway.localhost.localdomain/api/v1/auth')),
 })
 
 const env = envVars.resolve()
@@ -24,6 +23,22 @@ export const config = {
   port: env.PORT,
   debug: env.DEBUG,
   jwt: {
-    secret: env.JWT_SECRET,
+    privateKey: env.JWT_SECRET,
+  },
+  apiUrl: {
+    auth: env.AUTH_API,
   },
 }
+
+// generate .env example file
+
+// const runningAsScript = require.main === module
+// if (runningAsScript) {
+//   const [,, filepath] = process.argv
+//   fs.promises.writeFile(filepath ?? './.env.example', envVars.example())
+//     .then(() => process.exit(0))
+//     .catch(e => {
+//       console.error(e)
+//       process.exit(1)
+//     })
+// }

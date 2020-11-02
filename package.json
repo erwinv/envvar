@@ -1,6 +1,7 @@
 {
-  "version": "1.0.1",
-  "description": "Environment Variables",
+  "name": "@erwinvil/envvar",
+  "version": "2.0.0",
+  "description": "Fully-typed Environment Variables",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
