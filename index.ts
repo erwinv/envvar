@@ -1,4 +1,14 @@
 export {
-  Required as EnvVar,
-  Optional as OptEnvVar,
-} from './envvar'
+  bool,
+  num,
+  str,
+  optional,
+  Enum,
+  EnvVars,
+} from './lib/envvar'
+
+export {
+  EnvVarError,
+  UnsetError,
+  ValueTypeError,
+} from './lib/error'
