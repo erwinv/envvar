@@ -7,6 +7,18 @@ export class EnvVarError extends Error {
   }
 }
 
+export class EnvVarAggregateError extends Error {
+  readonly name = 'EnvVarAggregateError'
+
+  readonly errors: EnvVarError[]
+
+  constructor(errors: EnvVarError[]) {
+    super(errors.map(({ message }) => message).join('\n'))
+
+    this.errors = errors
+  }
+}
+
 export class UnsetError extends EnvVarError {
   readonly name = 'UnsetError'
 

@@ -1,4 +1,6 @@
 import {
+  EnvVarError,
+  EnvVarAggregateError,
   UnsetError,
   ValueTypeError,
 } from './error'
@@ -27,13 +29,13 @@ export class EnvVars<T> {
   }
 
   validate() {
-    let errors = [] as Error[]
+    let errors = [] as EnvVarError[]
 
     for (const k in this.template) {
       try {
         this.template[k](k)
       } catch(e: unknown) {
-        if (e instanceof Error) {
+        if (e instanceof EnvVarError) {
           errors.push(e)
         } else {
           throw e
@@ -41,8 +43,10 @@ export class EnvVars<T> {
       }
     }
 
-    if (errors.length > 0) {
-      throw new Error(errors.map(({ message }) => message).join('\n'))
+    if (errors.length > 1) {
+      throw new EnvVarAggregateError(errors)
+    } else if (errors.length === 1) {
+      throw errors[0]
     }
   }
 

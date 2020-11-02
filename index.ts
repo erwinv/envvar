@@ -9,6 +9,7 @@ export {
 
 export {
   EnvVarError,
+  EnvVarAggregateError,
   UnsetError,
   ValueTypeError,
 } from './lib/error'
