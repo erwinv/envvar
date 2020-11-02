@@ -1,9 +1,8 @@
 {
-  "name": "@erwinvil/envvar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Environment Variables",
-  "main": "./build/index.js",
-  "types": "./build/index.d.ts",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "scripts": {
     "build": "tsc"
   },
