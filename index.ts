@@ -1,6 +1,6 @@
 export { EnvVars } from './lib/envvar'
 
-export { BaseEnvVarResolver as BaseResolver } from './lib/resolver/base'
+export { BaseEnvVarResolver } from './lib/resolver/base'
 export { bool } from './lib/resolver/bool'
 export { enu } from './lib/resolver/enu'
 export { num } from './lib/resolver/num'
