@@ -1,14 +1,22 @@
 {
-  "name": "config",
+  "name": "@erwinvil/envvar",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Environment Variables",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc"
   },
-  "author": "",
+  "author": "Erwin Villejo",
   "license": "ISC",
-  "devDependencies": {
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {},
+  "dependencies": {
     "@types/node": "^14.14.6"
+  },
+  "engines": {
+    "node": ">=12.10.0"
   }
 }
