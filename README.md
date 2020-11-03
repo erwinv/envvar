@@ -30,7 +30,7 @@ const envVars = new EnvVars({
 const env = envVars.resolve()
 ```
 
-#### Type Inferrence
+#### Type Inference
 
 TypeScript will correctly infer the resolved ENV vars types:
 
