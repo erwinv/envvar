@@ -59,7 +59,7 @@ export class EnvVars<T> {
     let result: string = ''
 
     for (const k in this.template) {
-      result += k + '=' + this.template[k].defaultValue ?? ''
+      result += `${k}=${this.template[k].defaultValue ?? ''}\n`
     }
 
     return result
