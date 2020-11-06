@@ -2,6 +2,7 @@ import { BaseEnvVarResolver } from './base'
 
 class UrlResolver extends BaseEnvVarResolver<URL> {
   resolvedType = 'URL'
+
   validate(valFromEnv: string) {
     try {
       new URL(valFromEnv)
@@ -10,6 +11,7 @@ class UrlResolver extends BaseEnvVarResolver<URL> {
       return false
     }
   }
+
   parse(valFromEnv: string) {
     return new URL(valFromEnv)
   }
