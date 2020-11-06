@@ -6,8 +6,13 @@
   "scripts": {
     "build": "npx tsc"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erwinvil/envvar.git"
+  },
   "author": "Erwin Villejo",
   "license": "ISC",
+  "homepage": "https://github.com/erwinvil/envvar#readme",
   "publishConfig": {
     "access": "public"
   },
