@@ -1,10 +1,14 @@
 {
-  "version": "2.0.2",
+  "name": "@erwinvil/envvar",
+  "version": "2.0.3",
   "description": "Fully-typed Environment Variables",
   "main": "build/index.js",
   "types": "build/index.d.ts",
   "scripts": {
-    "build": "npx tsc"
+    "build": "npx tsc",
+    "test": "npx jest",
+    "dev": "npx jest --watch",
+    "coverage": "npx jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -17,6 +21,13 @@
     "access": "public"
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-typescript": "^7.12.1",
+    "@types/jest": "^26.0.15",
+    "babel-jest": "^26.6.3",
+    "jest": "^26.6.3",
     "typescript": "^4.0.5"
   },
   "dependencies": {

@@ -1,11 +1,11 @@
 import { BaseEnvVarResolver } from './base'
 
-class EnumResolver<E extends string> extends BaseEnvVarResolver<E> {
-  private enumValues: E[]
+export class EnumResolver<E extends string> extends BaseEnvVarResolver<E> {
+  private enumValues: readonly E[]
 
   resolvedType: string
 
-  constructor(enumValues: E[]) {
+  constructor(enumValues: readonly E[]) {
     super()
     this.enumValues = enumValues
     this.resolvedType = this.enumValues.join('|')
@@ -19,6 +19,6 @@ class EnumResolver<E extends string> extends BaseEnvVarResolver<E> {
   }
 }
 
-export function enu<E extends string>(enumValues: E[]) {
+export function enu<E extends string>(enumValues: readonly E[]) {
   return new EnumResolver<E>(enumValues)
 }

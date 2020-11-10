@@ -1,6 +1,6 @@
 import { BaseEnvVarResolver } from './base'
 
-class BoolResolver extends BaseEnvVarResolver<boolean> {
+export class BoolResolver extends BaseEnvVarResolver<boolean> {
   resolvedType = 'boolean'
 
   validate(valFromEnv: string) {

@@ -10,7 +10,7 @@ export interface Resolver<T> {
   defaultValue: T | null
 }
 
-type ResolverTemplate<T> = {
+export type ResolverTemplate<T> = {
   [P in keyof T]: Resolver<T[P]>
 }
 

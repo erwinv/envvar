@@ -1,6 +1,6 @@
 import { BaseEnvVarResolver } from './base'
 
-class UrlResolver extends BaseEnvVarResolver<URL> {
+export class UrlResolver extends BaseEnvVarResolver<URL> {
   resolvedType = 'URL'
 
   validate(valFromEnv: string) {

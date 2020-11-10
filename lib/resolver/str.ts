@@ -1,6 +1,6 @@
 import { BaseEnvVarResolver } from './base'
 
-class StrResolver extends BaseEnvVarResolver<string> {
+export class StrResolver extends BaseEnvVarResolver<string> {
   resolvedType = 'string'
 
   validate() {

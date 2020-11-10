@@ -1,6 +1,6 @@
 import { BaseEnvVarResolver } from './base'
 
-class NumResolver extends BaseEnvVarResolver<number> {
+export class NumResolver extends BaseEnvVarResolver<number> {
   resolvedType = 'number'
 
   validate(valFromEnv: string) {
