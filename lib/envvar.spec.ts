@@ -79,7 +79,7 @@ test('do not aggregate if only 1 EnvVar error', () => {
 test('bubble up unexpected errors', () => {
   const customResolver: Resolver<boolean> = {
     resolve: () => {
-      throw new Error('Unexpected (not an UnsetError or ValueTypeError')
+      throw new Error('Unexpected (not an UnsetError or ValueTypeError)')
     },
     default: () => customResolver,
     required: () => customResolver,
@@ -102,6 +102,14 @@ test('happy path', () => {
 
   expect(() => envVars.resolve())
     .not.toThrow()
+  expect(envVars.resolve())
+    .toStrictEqual({
+      BOOL_VAR: true,
+      NUM_VAR: 42,
+      STR_VAR: 'hello',
+      ENUM_VAR: ENUM_VALUES[0],
+      URL_VAR: new URL('https://a.valid/url'),
+    })
 })
 
 test('generate .env example', () => {
