@@ -21,12 +21,13 @@ export class EnvVars<T> {
     this.template = template
   }
 
-  validate() {
+  resolve() {
+    let result = {} as T
     let errors = [] as EnvVarError[]
 
     for (const k in this.template) {
       try {
-        this.template[k].resolve(k)
+        result[k] = this.template[k].resolve(k)
       } catch(e: unknown) {
         if (e instanceof EnvVarError) {
           errors.push(e)
@@ -40,16 +41,6 @@ export class EnvVars<T> {
       throw new EnvVarAggregateError(errors)
     } else if (errors.length === 1) {
       throw errors[0]
-    }
-  }
-
-  resolve() {
-    this.validate()
-
-    let result = {} as T
-
-    for (const k in this.template) {
-      result[k] = this.template[k].resolve(k)
     }
 
     return result

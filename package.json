@@ -1,5 +1,5 @@
 {
-  "name": "@erwinvil/envvar",
+  "name": "@erwinv/envvar",
   "version": "2.0.3",
   "description": "Fully-typed Environment Variables",
   "main": "build/index.js",
@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erwinvil/envvar.git"
+    "url": "git+https://github.com/erwinv/envvar.git"
   },
   "author": "Erwin Villejo",
   "license": "ISC",
-  "homepage": "https://github.com/erwinvil/envvar#readme",
+  "homepage": "https://github.com/erwinv/envvar#readme",
   "publishConfig": {
     "access": "public"
   },
